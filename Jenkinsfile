@@ -7,6 +7,11 @@ pipeline {
         steps {
 //            echo "${createVersion(BUILD_NUMBER)}"
             sayHello("world")
+            script {
+                def util = new codes.showme.Utils()
+                def v = util.getVersion("${BUILD_NUMBER}", "${GIT_COMMIT}")
+                echo "${v}"
+            }
         }
     }
   }
