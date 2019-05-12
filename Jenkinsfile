@@ -12,6 +12,7 @@ pipeline {
                 def v = util.getVersion("${BUILD_NUMBER}", "${GIT_COMMIT}")
                 echo "${v}"
             }
+            generatePipeline('go')
         }
     }
   }
